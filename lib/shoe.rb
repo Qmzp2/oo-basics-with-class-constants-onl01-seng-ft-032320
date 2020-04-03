@@ -6,8 +6,9 @@ BRANDS = []
 
   def initialize(brand)
     @brand = brand
-    BRANDS << brand
-    BRANDS.uniq.flatten
+    if !(BRANDS.include?(@brand))
+      BRANDS << @brand
+    end
   end
 
   def cobble
